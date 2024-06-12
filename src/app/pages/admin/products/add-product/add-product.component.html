@@ -1,0 +1,86 @@
+
+<form [formGroup]="addProductForm" (ngSubmit)="handleSubmit()">
+
+  <h2 class="text-center">Thêm Sản Phẩm</h2>
+  <p-toast position="top-right"></p-toast>
+  <div class="form-group">
+    <label for="title">Tiêu Đề</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="Tiêu Đề"
+      formControlName="title"
+    />
+    <div *ngIf="addProductForm.controls['title'].touched && addProductForm.controls['title'].invalid">
+      <small class="text-danger" *ngIf="addProductForm.controls['title'].errors?.['required']">Tiêu đề là bắt buộc</small>
+      <small class="text-danger" *ngIf="addProductForm.controls['title'].errors?.['minlength']">Tiêu đề phải có ít nhất 6 ký tự</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Giá</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      placeholder="Giá"
+      formControlName="price"
+    />
+    <div *ngIf="addProductForm.controls['price'].touched && addProductForm.controls['price'].invalid">
+      <small class="text-danger" *ngIf="addProductForm.controls['price'].errors?.['required']">Giá là bắt buộc</small>
+      <small class="text-danger" *ngIf="addProductForm.controls['price'].errors?.['min']">Giá phải lớn hơn hoặc bằng 0</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Mô Tả</label>
+    <textarea
+      class="form-control"
+      id="description"
+      placeholder="Mô Tả"
+      formControlName="description"
+    ></textarea>
+    <div *ngIf="addProductForm.controls['description'].touched && addProductForm.controls['description'].invalid">
+      <small class="text-danger" *ngIf="addProductForm.controls['description'].errors?.['required']">Mô tả là bắt buộc</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Danh Mục</label>
+    <select class="form-control" id="category" formControlName="category">
+      <option value="">Chọn Danh Mục</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    <div *ngIf="addProductForm.controls['category'].touched && addProductForm.controls['category'].invalid">
+      <small class="text-danger" *ngIf="addProductForm.controls['category'].errors?.['required']">Danh mục là bắt buộc</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Hình Ảnh</label>
+    <input
+      type="text"
+      class="form-control"
+      id="image"
+      placeholder="Hình Ảnh"
+      formControlName="image"
+    />
+    <div *ngIf="addProductForm.controls['image'].touched && addProductForm.controls['image'].invalid">
+      <small class="text-danger" *ngIf="addProductForm.controls['image'].errors?.['required']">Hình ảnh là bắt buộc</small>
+    </div>
+  </div>
+
+  <!-- <div class="d-flex gap-3 ">
+    <input type="checkbox">
+    <label for="">checkbox</label>
+  </div> -->
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="addProductForm.invalid"
+  >
+    Thêm Sản Phẩm
+  </button>
+</form>

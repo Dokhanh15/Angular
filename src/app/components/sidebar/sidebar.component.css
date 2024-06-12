@@ -1,0 +1,96 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  background: #2c2f33;
+  padding-top: 20px;
+  border-radius: 10px 0px 0px 10px;
+  line-height: 30px;
+  width: 200px;
+  height: 95em;
+}
+
+.sidebar .nav-link {
+  color: #fff;
+}
+
+.logo {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.sidebar .nav-link:hover {
+  background: #495057;
+
+}
+.content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.navbar-brand{
+  color: rgb(255, 255, 255);
+  font-size:x-large;
+  margin-left: 10px;
+  padding: 3px;
+}
+.chart-container {
+  position: relative;
+  height: 40vh;
+}
+
+.navbar {
+  background: #23272a;
+  color: #fff;
+  gap: 60em;
+}
+
+.navbar .nav-item .nav-link {
+  color: #fff;
+}
+
+.navbar .nav-item .nav-link:hover {
+  color: #adb5bd;
+}
+
+
+.navbar .navbar-brand:hover {
+  color: #bdb4ad;
+}
+
+.navbar .form-control {
+  background: #2c2f33;
+  border: none;
+  color: #fff;
+}
+
+.navbar .form-control::placeholder {
+  color: #adb5bd;
+}
+
+.navbar .badge {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #23272a;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,9 @@
+.notfound {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px; /* Chữ to */
+  color: rgb(79, 25, 25); /* Màu đỏ */
+  font-weight: 600;
+}

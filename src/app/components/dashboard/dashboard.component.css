@@ -1,0 +1,55 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.content {
+  width: 1450px;
+  flex-grow: 1;
+}
+
+/* .card {
+  margin-bottom: 20px;
+} */
+
+.chart-container {
+  position: relative;
+  height: 40vh;
+}
+
+.navbar {
+  background: #23272a;
+  color: #fff;
+}
+
+.navbar .nav-item .nav-link {
+  color: #fff;
+}
+
+.navbar .nav-item .nav-link:hover {
+  color: #adb5bd;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+.collapse{
+  gap: 50px;
+  margin-left: 850px;
+}
+
+.navbar .navbar-brand:hover {
+  color: #adb5bd;
+}
+
+.navbar .form-control {
+  background: #2c2f33;
+  border: none;
+  color: #fff;
+}
+img{
+  width: 50px;
+}
+.navbar .form-control::placeholder {
+  color: #adb5bd;
+}

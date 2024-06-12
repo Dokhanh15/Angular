@@ -1,0 +1,84 @@
+<div class="update-product">
+<h2 class="text-center">Cập Nhật Sản Phẩm</h2>
+<form [formGroup]="updateProductForm" (ngSubmit)="handleSubmit()">
+
+  <p-toast position="top-right"></p-toast>
+  <div class="form-group">
+    <label for="title">Tiêu Đề</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      placeholder="Tiêu Đề"
+      formControlName="title"
+    />
+    <div *ngIf="updateProductForm.get('title')?.touched && updateProductForm.get('title')?.invalid">
+      <small class="text-danger" *ngIf="updateProductForm.get('title')?.errors?.['required']">Tiêu đề là bắt buộc</small>
+      <small class="text-danger" *ngIf="updateProductForm.get('title')?.errors?.['minlength']">Tiêu đề phải có ít nhất 6 ký tự</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="price">Giá</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      placeholder="Giá"
+      formControlName="price"
+    />
+    <div *ngIf="updateProductForm.get('price')?.touched && updateProductForm.get('price')?.invalid">
+      <small class="text-danger" *ngIf="updateProductForm.get('price')?.errors?.['required']">Giá là bắt buộc</small>
+      <small class="text-danger" *ngIf="updateProductForm.get('price')?.errors?.['min']">Giá phải lớn hơn hoặc bằng 0</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Mô Tả</label>
+    <textarea
+      class="form-control"
+      id="description"
+      placeholder="Mô Tả"
+      formControlName="description"
+    ></textarea>
+    <div *ngIf="updateProductForm.get('description')?.touched && updateProductForm.get('description')?.invalid">
+      <small class="text-danger" *ngIf="updateProductForm.get('description')?.errors?.['required']">Mô tả là bắt buộc</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category">Danh Mục</label>
+    <input class="form-control mb-1" id="category" placeholder="danhmuc" formControlName="category" readonly>
+    <select class="form-control" id="category" formControlName="category">
+      <option value="">Chọn Danh Mục</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    <div *ngIf="updateProductForm.get('category')?.touched && updateProductForm.get('category')?.invalid">
+      <small class="text-danger" *ngIf="updateProductForm.get('category')?.errors?.['required']">Danh mục là bắt buộc</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Hình Ảnh</label>
+    <img *ngIf="updateProductForm.get('image')?.value" [src]="updateProductForm.get('image')?.value" alt="Hình Ảnh" class="img-thumbnail mr-2" style="max-width: 100px; max-height: 100px; margin-bottom: 10px;">
+    <input
+      type="text"
+      class="form-control"
+      id="image"
+      placeholder="Hình Ảnh"
+      formControlName="image"
+    />
+    <div *ngIf="updateProductForm.get('image')?.touched && updateProductForm.get('image')?.invalid">
+      <small class="text-danger" *ngIf="updateProductForm.get('image')?.errors?.['required']">Hình ảnh là bắt buộc</small>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="updateProductForm.invalid"
+  >
+    Cập Nhật Sản Phẩm
+  </button>
+</form>
+</div>

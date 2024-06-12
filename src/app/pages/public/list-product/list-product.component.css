@@ -1,0 +1,132 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 20px;
+  justify-items: center;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 220px;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid rgb(227, 223, 223);
+  transition: transform 0.3s ease;
+
+}
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+.product-info {
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+.product-info h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.product-info .price {
+  font-size: 1.2em;
+  color: #f70404;
+  margin: 10px 0;
+}
+.view-all {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.crop {
+  overflow: hidden;
+  display: inline-block;
+}
+.crop2 {
+  display: flex;
+}
+.fa-star {
+  font-size: 16px;
+}
+.crop2{
+  margin-left: 45px;
+}
+/* CSS */
+
+ .col-3 {
+  border-radius: 20px;
+  background-color: #e9ecef;
+  border: none;
+  padding-left: 2.5rem;
+  margin-left: auto;
+  padding: 10px;
+}
+ .col-3::placeholder {
+  color: #545556;
+}
+ .col-3:focus {
+  box-shadow: none;
+  background-color: #e9ecef;
+}
+
+
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+
+.ngx-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.ngx-pagination a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #333;
+  text-decoration: none;
+}
+
+.ngx-pagination a.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+.ngx-pagination a.disabled {
+  color: #ddd;
+}
+
+

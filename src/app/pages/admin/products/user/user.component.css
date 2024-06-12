@@ -1,0 +1,58 @@
+/* user-list.component.css */
+
+/* Đặt chiều rộng cho bảng và căn giữa nó */
+p-table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Kiểu tiêu đề bảng */
+p-table thead th {
+  background-color: #007ad9;
+  color: white;
+  text-align: left;
+  padding: 10px;
+}
+
+/* Kiểu dòng dữ liệu */
+p-table tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+p-table tbody td {
+  padding: 10px;
+}
+
+/* Kiểu nút xóa */
+p-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+p-button:hover {
+  background-color: #c0392b;
+}
+
+/* Kiểu cho p-toast */
+p-toast {
+  z-index: 10000;
+}
+
+p-toast .p-toast-message {
+  background-color: #007ad9;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+p-toast .p-toast-message-success {
+  background-color: #2ecc71;
+}
+
+p-toast .p-toast-message-error {
+  background-color: #e74c3c;
+}

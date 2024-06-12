@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <ul class="nav">
+        <li><a [routerLink]="['/']" class="nav-link px-2">Home</a></li>
+        <li><a [routerLink]="['/products']" class="nav-link px-2">Products</a></li>
+        <li><a [routerLink]="['']" class="nav-link px-2">Courses <span class="dropdown-toggle"></span></a></li>
+        <li><a [routerLink]="['']" class="nav-link px-2">Jobs</a></li>
+        <li><a [routerLink]="['']" class="nav-link px-2">Go Pro</a></li>
+      </ul>
+
+      <a href="/" class="logo text-dark text-decoration-none mx-auto">
+        <i class="fas fa-crown"></i> Khanh shop
+      </a>
+
+      <div class="d-flex align-items-center">
+        <form class="me-3 position-relative" (ngSubmit)="onSearch()">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search" [(ngModel)]="searchTerm" name="searchTerm" (input)="onSearchInput()">
+          <ul *ngIf="suggestions.length > 0" class="list-group position-absolute suggestion-list">
+            <li *ngFor="let suggestion of suggestions" class="list-group-item suggestion-item" (click)="onSelectSuggestion(suggestion)">
+              {{ suggestion.title }}
+            </li>
+          </ul>
+        </form>
+
+        <!-- Thay đổi phần đăng nhập và đăng ký thành thông tin người dùng và đăng xuất -->
+        <div *ngIf="isLoggedIn(); else loginBlock" class="text-end">
+          <span class="me-2">Hi, {{ getUsername() }}</span>
+          <button class="btn btn-dark" (click)="logout()">Logout</button>
+        </div>
+        <ng-template #loginBlock>
+          <div class="text-end">
+            <a routerLink="/login" class="btn btn-login me-2">Log in</a>
+            <a routerLink="/register" class="btn btn-signup">Sign up</a>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card">
+    <p-toast position="top-right"></p-toast>
+    <div class="card-header">
+      <h4>User List</h4>
+    </div>
+    <div class="card-body">
+
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+            <td>{{ user.email }}</td>
+            <td>{{ user.username }}</td>
+            <td class="gap-3 d-flex justify-content-center">
+              <button
+                class="btn btn-danger"
+                (click)="deleteUser(user.id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+*
+{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.content1
+{
+  justify-content: center;
+  align-items: center;
+  display: flex ;
+}
+.conten2{
+  padding: 50px;
+  box-shadow: 1px 5px 10px;
+}
+
